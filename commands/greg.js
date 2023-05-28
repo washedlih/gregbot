@@ -31,7 +31,6 @@ module.exports = {
       interaction.user.send(`${bold("Password: baruch1234")} \nOpen ${hiddenEmbed} to login.`);
     }
     claimed.length = 0;
-    await interaction.reply(`Please wait 10 seconds before using this command ${interaction.user}`);
   },
 };
 
