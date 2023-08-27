@@ -1,9 +1,9 @@
-const { SlashCommandBuilder, hideLinkEmbed, bold } = require("discord.js");
+const { SlashCommandBuilder, hyperlink, hideLinkEmbed, bold } = require("discord.js");
 const randomName = require("random-name");
 const randomPhone = require("random-mobile");
 
 const url = "https://delivery.gregoryscoffee.com/auth/email?&fulfillment=pickup";
-const hiddenEmbed = hideLinkEmbed(url);
+const hiddenEmbed = hyperlink("here", hideLinkEmbed(url));
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("g")
@@ -28,7 +28,7 @@ module.exports = {
     if (!claimed.length) {
       interaction.user.send("Something went wrong, please try again later.");
     } else {
-      interaction.user.send(`${bold("Password: baruch1234")} \nOpen ${hiddenEmbed} to login.`);
+      interaction.user.send(bold(`Password: baruch1234 \nLogin ${hiddenEmbed}`));
     }
     claimed.length = 0;
   },
